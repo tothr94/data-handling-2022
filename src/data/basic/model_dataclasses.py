@@ -34,7 +34,7 @@ if __name__ == "__main__":
     print(p1)
     print(p2)
     print(p1 == p2)
-    print(p1 < p2)
+    # print(p1 < p2)
 
     people = set()
     people.add(p1)
