@@ -1,7 +1,3 @@
-from functools import total_ordering
-
-
-@total_ordering
 class Person:
     id: str
     name: str
@@ -17,6 +13,9 @@ class Person:
     def __eq__(self, o: object) -> bool:
         return isinstance(o, Person) and self.id == o.id
 
+    def __ne__(self, other) -> bool:
+        return not self.__eq__(other)
+
     def __str__(self) -> str:
         return "#{0}: {1} ({2}, {3})".format(self.id, self.name, self.age, self.male)
 
@@ -30,7 +29,6 @@ class Person:
         return self.id < o.id
 
 
-@total_ordering
 class Car:
     plate: str
     type: str
@@ -46,6 +44,9 @@ class Car:
     def __eq__(self, o: object) -> bool:
         return isinstance(o, Car) and self.plate == o.plate
 
+    def __ne__(self, other) -> bool:
+        return not self.__eq__(other)
+
     def __str__(self) -> str:
         return "{0} ({1}, {2}): {3}".format(self.plate, self.type, self.year, self.automatic)
 
@@ -59,7 +60,6 @@ class Car:
         return self.plate < o.plate
 
 
-@total_ordering
 class Airport:
     code: str
     name: str
@@ -76,6 +76,9 @@ class Airport:
 
     def __eq__(self, o: object) -> bool:
         return isinstance(o, Airport) and self.code == o.code
+
+    def __ne__(self, other) -> bool:
+        return not self.__eq__(other)
 
     def __str__(self) -> str:
         return "{code} ({name}): {city}, {state}, {country}".format(
