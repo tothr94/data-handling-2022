@@ -3,7 +3,7 @@ from faker import Faker
 from faker_airtravel import AirTravelProvider
 from faker_vehicle import VehicleProvider
 
-from model_dataclasses import Car, Airport, Person
+from data.basic.model_dataclasses import Car, Airport, Person
 
 
 def generate_people(n: int, male_ratio: float = 0.5, locale: str = "en_US",
